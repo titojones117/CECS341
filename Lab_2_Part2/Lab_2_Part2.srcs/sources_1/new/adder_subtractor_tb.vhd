@@ -5,14 +5,13 @@ entity adder_subtractor_tb is
 end adder_subtractor_tb;
 
 architecture tb of adder_subtractor_tb is
-  -- DUT I/O signals
+
   signal A      : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
   signal B      : STD_LOGIC_VECTOR(3 downto 0) := (others => '0');
-  signal SUB    : STD_LOGIC := '0';  -- 0=add, 1=sub
+  signal SUB    : STD_LOGIC := '0';  
   signal Result : STD_LOGIC_VECTOR(3 downto 0);
   signal Cout   : STD_LOGIC;
 
-  -- Component (matches your DUT)
   component adder_subtractor_4bit is
     Port (
       A      : in  STD_LOGIC_VECTOR (3 downto 0);
@@ -23,7 +22,7 @@ architecture tb of adder_subtractor_tb is
     );
   end component;
 begin
-  -- Instantiate DUT
+  
   UUT: adder_subtractor_4bit
     port map (
       A      => A,
@@ -33,10 +32,9 @@ begin
       Cout   => Cout
     );
 
-  -- Apply lab test vectors (10 ns apart)
   stim: process
   begin
-    -- ADD
+   
     SUB <= '0';
     A <= "0000"; B <= "0000"; wait for 10 ns;
     A <= "1111"; B <= "1111"; wait for 10 ns;
@@ -44,7 +42,6 @@ begin
     A <= "0111"; B <= "0110"; wait for 10 ns;
     A <= "1111"; B <= "0001"; wait for 10 ns;
 
-    -- SUB
     SUB <= '1';
     A <= "0000"; B <= "0000"; wait for 10 ns;
     A <= "1111"; B <= "1111"; wait for 10 ns;
