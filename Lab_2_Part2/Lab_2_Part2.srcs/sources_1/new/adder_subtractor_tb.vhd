@@ -22,7 +22,7 @@ architecture tb of adder_subtractor_tb is
     );
   end component;
 begin
-  
+
   UUT: adder_subtractor_4bit
     port map (
       A      => A,
