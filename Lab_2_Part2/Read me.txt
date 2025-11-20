@@ -1,0 +1,19 @@
+CECS 341 – Lab 2 Part 2: 4-bit Adder/Subtractor
+
+Overview
+This part designs and verifies a 4-bit Adder/Subtractor using VHDL in Vivado 2025.1.  
+It uses four full-adders and XOR logic controlled by the SUB signal for two’s-complement subtraction.
+
+Files
+- full_adder.vhd – 1-bit Full Adder component  
+- adder_subtractor_4bit.vhd – Top-level 4-bit Adder/Subtractor  
+- adder_subtractor_tb.vhd – Testbench (Stage 3 & 4)  
+- Table1_results.png – Expected vs Observed results  
+- waveform_full.png, waveform_zoomed.png – Simulation waveforms  
+- Lab_2_Part2.xpr – Vivado project file  
+
+How to Run
+1. Open `Lab_2_Part2.xpr` in Vivado.  
+2. Verify that all `.vhd` files are under Design Sources and Simulation Sources.  
+3. Right-click `adder_subtractor_tb.vhd` → Set as Top.  
+4. Run Behavioral Simulation and view signals `A`, `B`, `SUB`, `Result`, `Cout`.
